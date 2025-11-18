@@ -1,0 +1,11 @@
+<ul>
+  <% @tasks.each do |task| %>
+
+    <li style="display: flex; flex-flow: row; margin: 12px;">
+      <input type="checkbox" id="completed" name="completed" <%= task.completed ? "checked" : " " %>/>
+      <h3 style="margin: 24px;"><%= link_to task.title, task_path(task) %></h3>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "+ create a new task", new_task_path() %>
